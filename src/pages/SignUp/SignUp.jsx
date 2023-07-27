@@ -24,7 +24,7 @@ const SignUp = () => {
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         const saveUser = { name: data.name, email: data.email }
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://chef-table-server-zeta.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -122,7 +122,7 @@ const SignUp = () => {
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Sign Up" />
                             </div>
-                            <p><small>Already registerd? <Link to='/login'>sign in</Link></small></p>
+                            <p ><small>Already registerd? <Link className='text-primary' to='/login'>sign in</Link></small></p>
                             <SocialLogin></SocialLogin>
                         </form>
                     </div>

@@ -102,7 +102,7 @@ const Login = () => {
                             <div className="form-control mt-3">
                                 <input disabled={false} className="btn btn-primary" type="submit" value="Sign In" />
                             </div>
-                            <p><small>New here? <Link to='/signup'>Create a new account?</Link></small></p>
+                            <p><small>New here? <Link className='text-primary' to='/signup'>create a new account?</Link></small></p>
                             <SocialLogin></SocialLogin>
                         </form>
 
