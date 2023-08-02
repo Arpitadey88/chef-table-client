@@ -15,7 +15,7 @@ const FoodCard = ({ item }) => {
         console.log('aaa', item);
         if (user && user.email) {
             const cartItem = { menuItemId: _id, name, image, price, email: user.email }
-            fetch('https://chef-table-server-zeta.vercel.app/carts', {
+            fetch('http://localhost:5000/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -54,7 +54,7 @@ const FoodCard = ({ item }) => {
     }
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src={image} alt="Shoes" /></figure>
+            <figure><img style={{ height: '320px', width: '100%' }} className=' border-lime-800' src={image} alt="Shoes" /></figure>
             <p className='absolute right-0 mr-4 mt-4 bg-yellow-500 px-4 text-white'>${price}</p>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>

@@ -5,7 +5,7 @@ import useAuth from './useAuth';
 // import useAuth from './useAuth';
 
 const axiosSecure = axios.create({
-    baseURL: 'https://chef-table-server-zeta.vercel.app',
+    baseURL: 'http://localhost:5000',
 });
 
 const useAxiosSecure = () => {

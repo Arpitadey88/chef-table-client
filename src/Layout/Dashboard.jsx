@@ -55,8 +55,8 @@ const Dashboard = () => {
                         <li><NavLink to='/'><FaHome />Home</NavLink></li>
                         <li><NavLink to='/menu'><GrMenu />Our Menu</NavLink></li>
                         <li><NavLink to='/order/salad'><FaCheese />Order Food</NavLink></li>
-                        <li><NavLink to='/dashboard/shop'><FaShoppingBag />Shop</NavLink></li>
-                        <li><NavLink to='/dashboard/contact'><FaPhoneSquareAlt /> Contact</NavLink></li>
+                        <li><NavLink to='/'><FaShoppingBag />Shop</NavLink></li>
+                        <li><NavLink to='/contact'><FaPhoneSquareAlt /> Contact</NavLink></li>
                     </ul>
 
                 </div>

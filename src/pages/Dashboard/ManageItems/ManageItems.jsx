@@ -4,10 +4,12 @@ import useMenu from '../../../hooks/useMenu';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import { Link } from 'react-router-dom';
 
 const ManageItems = () => {
     const [menu, , refetch] = useMenu();
     const [axiosSecure] = useAxiosSecure();
+    // const { _id } = menu;
     const handleDelete = item => {
         Swal.fire({
             title: 'Are you sure?',
@@ -39,6 +41,7 @@ const ManageItems = () => {
                             <th>#</th>
                             <th>Item Image</th>
                             <th>Item Name</th>
+                            <th>Category</th>
                             <th className='text-right'>Price</th>
                             <th className='text-right'>Update</th>
                             <th>Delete</th>
@@ -57,9 +60,10 @@ const ManageItems = () => {
                                 </div>
                             </td>
                             <td>{item.name}</td>
+                            <td>{item.category}</td>
                             <td className=' text-right '>{item.price}</td>
                             <td className='text-end'>
-                                <button className="btn btn-ghost text-white bg-green-500 btn-sm"><FaEdit /></button>
+                                <Link to={`/dashboard/updateItem/${item._id}`}><button className="btn btn-ghost text-white bg-green-500 btn-sm"><FaEdit /></button></Link>
                             </td>
                             <td>
                                 <button onClick={() => handleDelete(item)} className="btn btn-ghost btn-sm text-white bg-red-500"><FaTrashAlt /></button>

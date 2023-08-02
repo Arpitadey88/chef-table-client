@@ -12,7 +12,7 @@ const AllUsers = () => {
         return res.data;
     })
     const handleMakeAdmin = user => {
-        fetch(`https://chef-table-server-zeta.vercel.app/users/admin/${user._id}`, {
+        fetch(`http://localhost:5000/users/admin/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -41,7 +41,7 @@ const AllUsers = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://chef-table-server-zeta.vercel.app/users/admin/${user._id}`, {
+                fetch(`http://localhost:5000/users/admin/${user._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
