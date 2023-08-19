@@ -20,7 +20,7 @@ const Menu = () => {
     const offered = menu.filter(item => item.category === 'offered');
 
     return (
-        <div>
+        <div className='lg:px-20'>
             <Helmet>
                 <title>Chef Table | Menu</title>
             </Helmet>

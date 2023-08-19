@@ -8,14 +8,14 @@ const MenuCategory = ({ items, title, bgImg }) => {
     return (
         <div className='pt-8'>
             {title && <CoverImage img={bgImg} title={title}></CoverImage>}
-            <div className='grid md:grid-cols-2 gap-10 my-16'>
+            <div className='grid md:grid-cols-2 gap-10 my-10'>
                 {
                     items.map(item => <MenuItem
                         key={item._id} item={item}>
                     </MenuItem>)
                 }
             </div>
-            <div className='text-center'>
+            <div className='text-center mb-5'>
                 <Link to={`/order/${title}`}><button className="btn btn-outline border-0 border-b-4">Order Now</button></Link>
             </div>
         </div>

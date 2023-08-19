@@ -22,12 +22,12 @@ const Order = () => {
     const pizza = menu.filter(item => item.category === 'pizza');
     const drinks = menu.filter(item => item.category === 'drinks');
     return (
-        <div>
+        <div className='lg:px-20'>
             <Helmet>
                 <title>Chef Table | Order Food</title>
             </Helmet>
             <CoverImage img={orderCover} title={"Order Food"}></CoverImage>
-            <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
+            <Tabs className='mt-5' defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                 <TabList>
                     <Tab>Salad</Tab>
                     <Tab>Pizza</Tab>

@@ -5,15 +5,17 @@ import PopularMenu from '../PopularMenu/PopularMenu';
 import Featured from '../Featured/Featured';
 import Testimonials from '../Testimonials/Testimonials';
 import { Helmet } from 'react-helmet-async';
+import AnimatedBanner from '../AnimatedBanner/AnimatedBanner';
 
 const Home = () => {
     return (
-        <div>
+        <div className='w-full'>
             <Helmet>
                 <title>Chef Table | Home</title>
             </Helmet>
-            <Banner></Banner>
+            <AnimatedBanner></AnimatedBanner>
             <Category></Category>
+            <Banner></Banner>
             <PopularMenu></PopularMenu>
             <Featured></Featured>
             <Testimonials></Testimonials>

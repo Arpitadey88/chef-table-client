@@ -16,13 +16,14 @@ const Testimonials = () => {
             .then(data => setReviews(data))
     }, [])
     return (
-        <section className='my-20'>
+        <section className='mt-20'>
             <SectionTitle subHeading={"Whats Our Clients Says"} heading={"Testimonials"}></SectionTitle>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                 {
                     reviews.map(review => <SwiperSlide
                         key={review._id}>
                         <div className='mx-24 my-16 flex flex-col items-center'>
+                            <img style={{ borderRadius: '300px' }} className='w-[100px]' src={review.image} alt="" />
                             <Rating
                                 style={{ maxWidth: 180 }}
                                 value={review.rating}

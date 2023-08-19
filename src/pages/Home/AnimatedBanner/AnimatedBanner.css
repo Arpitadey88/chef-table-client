@@ -1,0 +1,60 @@
+    /* banner part start */
+
+    .ani-img {
+        animation: image 2s linear 1;
+        animation-delay: 3s;
+        visibility: hidden;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes image {
+        0% {
+            transform: rotateZ(180deg) translateX(-500px);
+            visibility: visible;
+        }
+
+        100% {
+            transform: translateX(0);
+            visibility: visible;
+        }
+    }
+
+    .ani-text {
+        animation: text 1s linear 1;
+        animation-delay: 1s;
+        visibility: hidden;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes text {
+        0% {
+            transform: translateX(-500px);
+            visibility: visible;
+        }
+
+        100% {
+            transform: translateX(0);
+            visibility: visible;
+        }
+    }
+
+    .ani-form {
+        animation: text 1s linear 1;
+        animation-delay: 2s;
+        visibility: hidden;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes form {
+        0% {
+            transform: translateX(-500px);
+            visibility: visible;
+        }
+
+        100% {
+            transform: translateX(0);
+            visibility: visible;
+        }
+    }
+
+    /* banner part end */

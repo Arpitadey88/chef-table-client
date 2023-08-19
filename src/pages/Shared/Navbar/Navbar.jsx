@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../../assets/icon/logo.png'
 import { AuthContext } from '../../../providers/AuthProvider';
 import { FaShoppingCart } from 'react-icons/fa';
 import useCart from '../../../hooks/useCart';
@@ -16,27 +17,20 @@ const Navbar = () => {
             .catch(error => console.log(error))
     }
     const navOptions = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/menu'>Our Menu</Link></li>
-        <li><Link to={isAdmin ? '/dashboard/admindashboard' : '/dashboard/userdashboard'}>Dashboard</Link></li>
-        <li><Link to='/order/salad'>Order Food</Link></li>
+        <li><Link className='hover:bg-amber-500 hover:text-white' to='/'>Home</Link></li>
+        <li><Link className='hover:bg-amber-500 hover:text-white' to='/menu'>Our Menu</Link></li>
+        <li><Link className='hover:bg-amber-500 hover:text-white' to={isAdmin ? '/dashboard/admindashboard' : '/dashboard/userdashboard'}>Dashboard</Link></li>
+        <li><Link className='hover:bg-amber-500 hover:text-white' to='/order/salad'>Order Food</Link></li>
 
-        <li><Link to='/dashboard/mycart'><button className="btn btn-sm"><FaShoppingCart />
-            <div className="badge badge-secondary">{cart?.length || 0}</div></button>
+        <li><Link to='/dashboard/mycart'><a className="btn btn-sm text-amber-500"><FaShoppingCart />
+            <div className="badge bg-amber-500 text-white">{cart?.length || 0}</div></a>
         </Link></li>
-        {
-            user ?
-                <><span>{user?.displayName}</span>
-                    <button onClick={handleSignOut} className="btn btn-sm btn-ghost pt-1">Sign Out</button></>
-                : <>
-                    <li><Link to='/login'>Sign In</Link></li>
-                </>
-        }
+
     </>
 
     return (
         <>
-            <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-xl bg-black text-white">
+            <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-2xl px-20 bg-black text-white">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -46,7 +40,8 @@ const Navbar = () => {
                             {navOptions}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">Chef Table</a>
+
+                    <a className="flex align-middle normal-case text-xl font-bold  text-amber-500"><img style={{ width: '38px' }} src={logo} alt="" /> <span className='pt-4'>Chef Table</span> </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -54,7 +49,14 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Get Started</a>
+                    {
+                        user ?
+                            <><span className='m-2'>{user?.displayName}</span>
+                                <button onClick={handleSignOut} className="btn btn-sm btn-ghost bg-amber-500 normal-case">Sign Out</button></>
+                            : <>
+                                <Link to='/login'><button className="btn btn-sm bg-amber-500 normal-case">Sign In</button></Link>
+                            </>
+                    }
                 </div>
             </div>
         </>

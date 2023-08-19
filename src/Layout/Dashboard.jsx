@@ -38,15 +38,15 @@ const Dashboard = () => {
                                 <li><NavLink to='/dashboard/admindashboard'><FaHome />Admin Home</NavLink></li>
                                 <li><NavLink to='/dashboard/addItem'><FaUtensils />Add An Item</NavLink></li>
                                 <li><NavLink to='/dashboard/manageItems'><BsMenuUp />Manage Items</NavLink></li>
-                                <li><NavLink to='/dashboard/booking'><FaBook />Manage Bookings</NavLink></li>
+                                <li><NavLink to='/dashboard/allbooking'><FaBook />Manage Bookings</NavLink></li>
                                 <li><NavLink to='/dashboard/allusers'><FaUsers />All Users</NavLink></li>
                             </> : <>
                                 <li><NavLink to='/dashboard/userdashboard'><FaHome />User Home</NavLink></li>
-                                <li><NavLink to='/dashboard/history'><FaWallet />Payment History</NavLink></li>
+                                <li><NavLink to='/dashboard/payhistory'><FaWallet />Payment History</NavLink></li>
                                 <li><NavLink to='/dashboard/reservations'><FaCalendarAlt />Reservations</NavLink></li>
                                 <li><NavLink to='/dashboard/mycart'><FaShoppingCart />My Cart
                                     <span className="badge badge-secondary">{cart?.length || 0}</span></NavLink></li>
-                                <li><NavLink to='/dashboard/booking'><FaCalendarCheck />My Booking</NavLink></li>
+                                <li><NavLink to='/dashboard/mybooking'><FaCalendarCheck />My Booking</NavLink></li>
                                 <li><NavLink to='/dashboard/addreview'><FaStar />Add Review</NavLink></li>
                             </>}
                         {/* Sidebar content here */}
